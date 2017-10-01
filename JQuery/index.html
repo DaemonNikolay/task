@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="ID">ID</div>
+    <div class="class">
+        <p>CLASS</p>
+    </div>
+
+    <div id="searchSPAN">
+        <span>
+            fdfd
+        </span>
+    </div>
+
+    <p align="center">CENTER</p>
+
+    <div align="left">
+        <input type="submit" value="Считаем">
+    </div>
+
+    <p id="count"></p>
+
+    <br />
+    <p id="complete">NO</p>
+
+    <p>width: <b id="width"></b> px</p>
+    <p>height: <b id="height"></b> px</p>
+
+    <button class="top">Button</button>
+
+    <em>Это em</em>
+
+    <table border="1">
+        <tr>
+            <td>TD #0</td>
+            <td>TD #1</td>
+            <td>TD #2</td>
+        </tr>
+        <tr>
+            <td>TD #3</td>
+            <td>TD 4</td>
+            <td>TD #5</td>
+        </tr>
+        <tr>
+            <td>TD #6</td>
+            <td>TD #7</td>
+            <td>TD #8</td>
+        </tr>
+    </table>
+
+
+
+
+
+    <script type="text/javascript">
+        var test0 = $('#ID').html();
+        var test1 = $('.class').html();
+    </script>
+
+    <script type="text/javascript">
+        $('body').append('<p>NEW<p>');
+        $("div#ID").remove();
+        $("div.class>p").replaceWith("<p>class</p>");
+
+        $('body').append('<div id="newDiv"> </div>');
+
+
+        $("#searchSPAN").closest("span");
+    </script>
+
+    <script type="text/javascript">
+        $('input')
+            .data('counter', 0)
+            .click(function() {
+                var counter = $(this).data('counter');
+                $(this).data('counter', counter + 1);
+                $('#count').append($(this).data('counter'));
+            });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(Complete);
+
+        function Complete() {
+            $("p#complete").text("YES");
+            $("#width").text($(window).width());
+            $("#height").text($(window).height());
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(window).resize(function() {
+            alert('Размеры окна браузера изменены.');
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(".top").css({
+            "font-size": "200px"
+        });
+
+        $("em").attr("class", "EMEMEME");
+    </script>
+
+    <script>
+        $("td:eq(0)").css("color", "blue");
+    </script>
+
+
+    <script>
+        var object1 = {
+            mercedes: 0,
+            mitsubishi: 2
+        };
+        var object2 = {
+            bugati: 20,
+            honda: 100
+        };
+        var object3 = $.extend(object1, object2);
+    </script>
+
+    <script>
+        $.fn.extend({
+            mess: function() {
+                alert("This is fn.extend");
+            }
+        });
+        $('*').mess();
+    </script>
+</body>
+
+
+
+</html>
