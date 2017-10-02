@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <p>
+        <b>Замыкание</b> - это функция и все внешние переменные, которые ей доступны. Также это «вложенные» функции в JavaScript
+    </p>
+    <ul>
+        <li>Позволяет сохранять некие промежуточные значения</li>
+        <li>Инкапсуляция определённых данных</li>
+        <li>Часто используются для назначения обработчиков событий</li>
+        <li></li>
+    </ul>
+
+    <div id="result">
+    </div>
+
+    <div id="this">
+        <h2>this</h2>
+        <p>
+            Использование this гарантирует, что функция работает именно с тем объектом, в контексте которого вызвана.
+        </p>
+        <p>
+            Если одну и ту же функцию запускать в контексте разных объектов, она будет получать разный this.
+        </p>
+    </div>
+
+    <div id="function">
+        <h2>Отличие function(){} от () => {}</h2>
+        <p>
+            ()=>{} - это краткий вариант создания функции.
+        </p>
+        <ul>
+            <li>Нельзя использовать в качестве конструктора</li>
+            <li>Нет своего this</li>
+            <li>Используют аргументы внешней "стандартной" функции</li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        function makeCounter() {
+            counter.currentCount = 0;
+
+            function counter() {
+                return counter.currentCount++;
+            };
+
+            return counter;
+        }
+
+        var counter = makeCounter();
+        alert(counter());
+        alert(counter());
+        alert(counter());
+        alert(counter());
+    </script>
+
+    <script type="text/javascript">
+        let func1 = x => x + 1;
+        let func2 = function(x) {
+            return x + 1;
+        };
+    </script>
+</body>
+
+</html>
