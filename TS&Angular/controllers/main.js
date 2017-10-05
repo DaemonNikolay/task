@@ -1,3 +1,3 @@
-angular.module('app', []).controller('myCtrl', function($scope) {
-    $scope.hello = "YES";
+angular.module('app', []).controller('myController', function($scope) {
+    $scope.text = "YES";
 });

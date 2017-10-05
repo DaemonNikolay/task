@@ -1,7 +1,5 @@
 var someModule = angular.module('someModule', []);
 
-
-
 someModule.value('someValue', 55);
 
 someModule.constant('someConst', 105);
