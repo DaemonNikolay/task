@@ -1,8 +1,8 @@
 <main>
-    <section class="todo-list" *ngIf="todos.length > 0">
-        <div class="todo-item" *ngFor="let todo of todos">
+    <section *ngIf="array.length > 0">
+        <div *ngFor="let element of array">
 
-            <p>{{ todo }}</p>
+            <p>{{ element }}</p>
 
         </div>
     </section>

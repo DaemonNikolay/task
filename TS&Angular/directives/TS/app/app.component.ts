@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-const todos = [
+const array = [
     'Yes, of course'
 ];
 
@@ -11,5 +11,5 @@ const todos = [
 })
 
 export class AppComponent{
-    todos = todos;
+    array = array;
 }
