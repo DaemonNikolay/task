@@ -1,0 +1,9 @@
+<main>
+    <section class="todo-list" *ngIf="todos.length > 0">
+        <div class="todo-item" *ngFor="let todo of todos">
+
+            <p>{{ todo }}</p>
+
+        </div>
+    </section>
+</main>
